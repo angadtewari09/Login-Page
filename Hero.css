@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Farro:wght@300&family=Teko&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+
+.Hero {
+    width:100%;
+    height: 220vh;
+    background: radial-gradient(
+    ellipse at left bottom,
+    rgba(22, 24, 47, 1) 0%,
+    rgba(38, 20, 72, 0.99999) 59%,
+    rgba(17, 37, 79, 0.9) 100%
+  );
+}
+
+.Hero nav {
+    background: #603abb;
+    font-family: 'Farro', sans-serif;
+    width: 100%;
+    padding: 20px 42px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "date date button time" ;
+    align-items: center;
+}
+.Hero nav h2 {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 45px;
+
+}
+.Hero nav .button {
+    grid-area: button;
+    width: 160px;
+    
+    margin-right: auto;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    background: #3a2b58;
+    color: white;
+    font-size:17px;
+    font-weight: bold;
+    outline:none;
+}
+#left {
+    grid-area: date;
+}
+#right {
+    grid-area: time;
+    text-align: center;
+}
+.box {
+    padding:10px;
+    border: 1px solid black;
+    margin: 10px;
+}
+.priorities {
+    grid-area: priority;
+}
+.mood-water {
+    grid-area: mood;
+}
+.todolist {
+    grid-area: todolist;
+    height: 600px;
+    margin-top: 50px;
+}
+.appointments {
+    grid-area:appointments;
+}
+.secondarytodo {
+    grid-area:secondarytodo;
+}
+.gratitudebox {
+    grid-area:gratitudebox;
+}
+.productivity {
+
+    grid-area: productivity;
+}
+.Wrapper {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "priority priority mood" 
+    "todolist appointments appointments"
+    "todolist gratitudebox gratitudebox"
+    "secondarytodo gratitudebox gratitudebox"
+    "secondarytodo productivity productivity";
+    background: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    height:auto;
+    padding:100px 25px 25px;
+    width:80vw;
+    margin:50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Widgets*/
+
+.prod-basic {
+    display:flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+
+}
+/*Star rating panel*/
+.heading {
+    margin: auto ;
+}
+.Productivity-Rating {
+    margin: auto;
+    
+
+}
+.rating {
+    position: relative;
+    transform: rotateY(180deg);
+    display: flex;
+    font-size: 40px;
+}
+.rating input {
+    display: none;
+    font-size: 40px;
+}
+.rating label {
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+    width: 50px;
+}
+.rating label::before {
+    content: '\f005';
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    color: #ccc;
+}
+.rating label::after{
+
+    content: '\f005';
+    font-family: fontAwesome;
+    display: block;
+    position: absolute;
+    outline: goldenrod;
+    color:yellow;
+    top:14px;
+    opacity: 0;
+    transition: 0.4s;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+.rating label:hover::after,
+.rating label:hover ~ label::after,
+.rating input:checked ~ label::after {
+    opacity: 1;
+}
+
+/*my mood panel*/
+#h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left:15px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+#line {
+    margin:auto 20px;
+}
+
+.emojis {
+    display: flex;
+    flex-wrap: row;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    margin:auto;
+    padding: auto;
+
+}
+.emojis input{
+    display: none;
+}
+.emojis label{
+    display: block;
+    cursor: pointer;
+    font-size: 40px;
+    padding: 5px;
+    opacity:0.5;
+}
+.emojis input:hover + label{
+    opacity: 1;
+    transition: 0.5s;
+}
+.emojis input:checked + label {
+    opacity: 1;
+    transition: 0.5s;
+    animation: updown 0.7s ease ;
+}
+@keyframes updown {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+   40% {transform: translateY(-20px);} 
+   60% {transform: translateY(-15px);} 
+ 
+}
+.water{
+    border: dotted black 2px;
+    padding:10px;
+    display: flex;
+}
+.add-water  {
+    width: auto;
+    height:50px;
+    margin-top:auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    font-family: 'Farro', sans-serif;
+    padding: 10px 10px;
+    background: #3a2b58;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    outline:none;
+    
+}
+.dropping {
+    width:100%;
+    height: 100px;
+    overflow-y: scroll;
+    overflow-y: hidden;
+    border-top-color: #999999;
+    scrollbar-width: thin;
+    -ms-overflow-style: none;
+}
+.dropping:hover {
+    overflow-y: scroll;
+}
+.drop {
+    height: 50px;
+    margin: auto;
+    padding:auto;
+    margin-bottom: 10px;
+}
+.dropping::-webkit-scrollbar-track {
+    
+    background-color: white;
+}
+.dropping::-webkit-scrollbar {
+    width: 4px !important;
+    background-color: transparent;
+}
+
+.dropping::-webkit-scrollbar-thumb {
+    background-color: #acacac;
+  }
+
+  /*primary todo list*/
+  
+  .todo-container {
+      margin-top: 5px;
+      width: 100%;
+      align-items: center;
+
+  }
+  .app-wrapper {
+      background: linear-gradient(to right bottom, #e1b382, #c89666);
+      width:100%;
+      height: 550px;
+      padding:20px;
+      border-radius: 10px;
+      box-sizing: border-box;   
+  }
+  .TodoList_Form form{
+      display: flex;
+      justify-content: center;
+
+  }
+
+  .header h1 {
+      color: #fff;
+      text-align: center;
+      margin: 30px 0;
+  }
+  .task-input {
+      outline: none;
+      width:300px;
+      padding: 11px;
+      margin-right:17px;
+      font-size:20px;
+      color:#ccc;
+      background-color: #0000;
+      border: 1px solid #c89666;
+      border-radius: 10px;
+  }
+  .todo-list {
+    list-style-type:none;
+    padding:1px;
+  }
+  .button-add {
+      width:65px;
+      padding:10px 10px;
+      font-size: 20px;
+      border-radius: 10px;
+      font-family: 'Poppins',sans-serif;
+      font-weight: 900;
+      border:none;
+      background-color:#f1af71;
+      cursor: pointer;
+  }
+  .list-item {
+      display: flex;
+      margin:20px 0;
+      padding: 15px;
+      padding-top: 21px;
+      padding-bottom: 29px;
+      border:2px dashed white; 
+      border-radius: 10px;
+      max-height: 30px;
+      list-style-type:none;
+      width: 98%;
+  }
+
+.butt-button {
+    display: flex;
+    float:right;
+    justify-content: right;
+    width: 50%;
+    margin-left: 30px;
+    font-size: 25px;
+}
+  .button-task {
+      top: -29px;
+      margin-left:10px;
+      margin-right: 10px;
+      position: relative;
+      font-size: 30px;
+      border:none;      outline:none;
+      cursor:pointer;
+      background-color: transparent;
+      border-radius: 50%;
+  }
+  .button-complete {
+      color:#ff6c6c;
+      margin-right: 10px;
+      
+  }
+  .button-edit {
+      color: #e2d029;
+      margin-right: 10px;
+  }
+  .button-delete {
+      color: lightgreen;
+  }
+  .complete {
+      text-decoration: solid;
+      text-decoration-line: line-through;
+      text-decoration-color: #000;
+      opacity:0.8;
+  }
+  .list {
+      width:250px;
+      color:black;
+      border:none;
+      top: -8px;
+      position: relative;
+      font-size: 20px;
+      padding-left:10px;
+      padding-top: 12px;
+      padding-bottom: 13px;  
+      margin-right: 15px;
+      cursor: pointer;
+      caret-color: transparent;
+      background: transparent;
+  }
+
+.finest {
+    overflow-y:auto;
+    background: transparent;
+    height: 350px;
+    scroll-behavior:smooth;
+    scrollbar-width: thin;
+    -ms-overflow-style: none;
+}
+
+
+.finest::-webkit-scrollbar-track {
+    background: transparent;
+    background-color: white;
+}
+.finest::-webkit-scrollbar {
+    width: 4px !important;
+    background-color: transparent;
+}
+
+.finest::-webkit-scrollbar-thumb {
+    background-color: #acacac;
+  }
+  
+/*secondary TodoList Starts here*/
+ 
